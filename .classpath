@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="F:/minibase_java/minibase_java/purdue/project4/lib/bufmgr.jar"/>
+	<classpathentry kind="lib" path="F:/minibase_java/minibase_java/purdue/project4/lib/diskmgr.jar"/>
+	<classpathentry kind="lib" path="F:/minibase_java/minibase_java/purdue/project4/lib/heap.jar"/>
+	<classpathentry kind="lib" path="F:/minibase_java/minibase_java/purdue/project4/lib/index.jar"/>
+	<classpathentry kind="lib" path="F:/minibase_java/minibase_java/purdue/project4/lib/relop.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
