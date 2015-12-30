@@ -34,11 +34,11 @@ public class Minibase {
    * @param replacement_policy Buffer pool replacement policy
    * @param exists If the database already exists on disk
    */
-  public Minibase(String dbname, int num_pgs, int bufpoolsize, int lookAheadSize,
+  public Minibase(String dbname, int num_pgs, int bufpoolsize,
       String replacement_policy, boolean exists) {
 
     // simply initialize the database
-    init(dbname, num_pgs, bufpoolsize, lookAheadSize, replacement_policy, exists);
+    init(dbname, num_pgs, bufpoolsize, replacement_policy, exists);
 
   } // constructor
 
@@ -52,7 +52,7 @@ public class Minibase {
    * @param replacement_policy Buffer pool replacement policy
    * @param exists If the database already exists on disk
    */
-  public void init(String dbname, int num_pgs, int bufpoolsize, int lookAheadSize,
+  public void init(String dbname, int num_pgs, int bufpoolsize,
       String replacement_policy, boolean exists) {
 
     // save the file name
@@ -61,7 +61,7 @@ public class Minibase {
     // load the static layers
     try {
       DiskManager = new DiskMgr();
-      BufferManager = new BufMgr(bufpoolsize, lookAheadSize);
+      BufferManager = new BufMgr(bufpoolsize);
     } catch (Exception exc) {
       haltSystem(exc);
     }

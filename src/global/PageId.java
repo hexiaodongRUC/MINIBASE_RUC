@@ -25,6 +25,11 @@ public class PageId implements GlobalConst {
     this.pid = pid;
   }
 
+  public int getPID()
+  {
+	  return pid;
+  }
+  
   /**
    * Makes a copy of the given PageId.
    */

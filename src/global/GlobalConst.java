@@ -8,7 +8,8 @@ public interface GlobalConst {
   //
   // Disk Manager Constants
   //
-
+	  
+	  
   /** Size of a page, in bytes. */
   public static final int PAGE_SIZE = 1024;
 

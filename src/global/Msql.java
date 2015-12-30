@@ -3,7 +3,6 @@ package global;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-
 import parser.AST_Start;
 import parser.MiniSql;
 import parser.MiniSqlTreeConstants;
@@ -22,13 +21,10 @@ public class Msql implements MiniSqlTreeConstants {
   protected static String PATH = System.getProperty("user.name") + ".minibase";
 
   /** Default database size (in pages). */
-      protected static int DB_SIZE = 10000;
+  protected static int DB_SIZE = 10000;
 
   /** Default buffer pool size (in pages) */
   protected static int BUF_SIZE = 100;
-  
-  /**Default prefetch size */
-  protected static int PRE_SIZE = 10;
 
   /** Command line prompt, when interactive. */
   protected static String PROMPT = "\nMSQL> ";
@@ -54,10 +50,10 @@ public class Msql implements MiniSqlTreeConstants {
     System.out.println("Minibase SQL Utility 1.0");
     if (new File(PATH).exists()) {
       System.out.println("Loading database...");
-      new Minibase(PATH, DB_SIZE, BUF_SIZE, PRE_SIZE, "Clock", true);
+      new Minibase(PATH, DB_SIZE, BUF_SIZE, "Clock", true);
     } else {
       System.out.println("Creating database...");
-      new Minibase(PATH, DB_SIZE, BUF_SIZE, PRE_SIZE, "Clock", false);
+      new Minibase(PATH, DB_SIZE, BUF_SIZE, "Clock", false);
     }
 
     // initialize the performance counters
@@ -97,7 +93,7 @@ public class Msql implements MiniSqlTreeConstants {
       if (node.isStats) {
 
         // get the new stats
-        Minibase.BufferManager.flushAllPages();
+		Minibase.BufferManager.flushAllPages();
         int reads2 = Minibase.DiskManager.getReadCount();
         int writes2 = Minibase.DiskManager.getWriteCount();
         int allocs2 = Minibase.DiskManager.getAllocCount();
